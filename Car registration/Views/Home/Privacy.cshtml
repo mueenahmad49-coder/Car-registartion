@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="card mt-4 shadow-sm">
+    <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Vehicle Registration System - Privacy & Terms</h4>
+    </div>
+    <div class="card-body">
+        <p class="card-text">We ensure that your registered vehicle data is fully secured and managed safely.</p>
+
+        <h5 class="text-primary mt-3">Data We Collect:</h5>
+        <ul>
+            <li><strong>Car Name:</strong> Used for vehicle identification (Maximum 20 characters).</li>
+            <li><strong>Owner Name:</strong> Used to identify the current registered owner.</li>
+            <li><strong>Chassis Number:</strong> A unique 10-digit identification number for the vehicle structure.</li>
+        </ul>
+
+        <h5 class="text-primary mt-3">Database Security:</h5>
+        <p>All submitted information is directly stored into a secure local SQL Server Database utilizing ADO.NET connectivity. No unauthorized third-party access is allowed.</p>
+    </div>
+    <div class="card-footer text-muted text-center">
+        Last Updated: @DateTime.Now.ToString("yyyy-MM-dd")
+    </div>
+</div>

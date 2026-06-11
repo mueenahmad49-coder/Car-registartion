@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CarRecordApp.Models.Car>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Registered Cars</h2>
+        <a asp-action="Create" class="btn btn-primary">Add New Car</a>
+    </div>
+
+    <table class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Car Name</th>
+                <th>Owner Name</th>
+                <th>Model Year</th>
+                <th>Mfg Date</th>
+                <th>Chassis No</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Index.cshtml mein jahan @if(!Model.Any()) likha hai wahan yeh update karein -->
+@if(!Model.Any()){
+    <tr><td colspan="6">No records found!</td></tr>
+}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CarName</td>
+                    <td>@item.OwnerName</td>
+                    <td>@item.ModelYear</td>
+                    <td>@item.ManufacturedDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.ChassisNumber</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
